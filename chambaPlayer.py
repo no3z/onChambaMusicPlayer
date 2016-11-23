@@ -26,7 +26,7 @@ PLAYLIST="/media/sda/Playlists/all_shuffle.m3u"
 IN_PLAYLIST="/media/sda/Playlists/all.m3u"
 
 def shuffle_m3u(input, output):
-	os.system("python /home/no3z/shuffle.py -i %s -o %s" % (input, output))
+	os.system("python /home/no3z/onChambaMusicPlayer/shuffle.py -i %s -o %s" % (input, output))
 
 def cb_next(channel):
         print "Next"

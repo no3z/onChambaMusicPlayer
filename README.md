@@ -11,7 +11,7 @@ Needed packages:
 Also, beets needs the play plugin enabled and configured like this:
 
 play:
-  command: python /home/no3z/beet_query.py
+  command: python /home/no3z/onChambaMusicPlayer/beet_query.py
   use_folders: yes
   raw: yes
   warning_threshold: no
