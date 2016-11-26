@@ -5,6 +5,7 @@ import RPi.GPIO as GPIO
 import time
 import sys
 import os
+import re
 
 GPIO.setmode(GPIO.BCM)
 
@@ -41,8 +42,9 @@ def cb_switch_all_album(channel):
         global current_mode
 	lp.stop()
 	if artist != "Unknown" and current_mode=="ALL":
+		artist = re.sub("(!|\$|#|&|\"|\'|\(|\)|\||<|>|`|\\\|;)", r"\\\1", artist)
         	print "Creating", artist, "playlist."
-                os.system("sudo -u no3z beet play %s" % artist.encode('UTF-8'))
+                os.system('sudo -u no3z beet play %s' % artist)
                 shuffle_m3u(in_query_m3u,out_query_m3u)
                 ml= vlc.MediaList()
                 ml.add_media(out_query_m3u)
